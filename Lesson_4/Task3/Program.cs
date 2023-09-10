@@ -1,28 +1,31 @@
-﻿namespace Task1
+﻿namespace Task3
 {
-    //    1) Напишіть програму, яка «запитуватиме» правильний пароль, доки він не буде введений. Правильний пароль нехай буде "root". Якщо пароль неправильний, програма повинна сказати "Неправильний пароль!"
+    //    3) Доробити програму, яку розглядали на занятті (через використання методу і в ньому return)
+    //Перевірка чи є введене натуральне число простим
+
     class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            string truePassword = "root";
-            string enteredPassword;
-            do
+            / Random random = new Random();
+            int gennum = random.next(2, 1000);
+
+            int indicator = 1;
+            for (int i = 2; i < gennum; i++)
             {
-                Console.ForegroundColor = ConsoleColor.White; // устанавливаем цвет
-                Console.Write("Введіть пароль: ");
-                Console.ResetColor(); // сбрасываем в стандартный
-                enteredPassword = Console.ReadLine();
-                if (enteredPassword != truePassword)
+                if (gennum % i == 0)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red; // устанавливаем цвет
-                    Console.WriteLine("Неправильний пароль!");
-                    Console.ResetColor(); // сбрасываем в стандартный
+                    console.writeline("not simple");
+                    indicator = 0;
+                    break;
                 }
-            } while (enteredPassword != truePassword);
+            }
+            if (indicator == 1)
+            {
+                console.writeline("simple");
+            }
             Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
-            Console.WriteLine("Вхід дозволено :) Ви увійшли в систему :)");
             Console.ResetColor(); // сбрасываем в стандартный
             Console.ReadKey();
         }
