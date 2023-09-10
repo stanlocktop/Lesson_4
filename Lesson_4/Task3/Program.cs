@@ -23,14 +23,16 @@ namespace Task3
             }
             if (simple)
             {
+                Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
                 Console.WriteLine("Simple :) ");
+                Console.ResetColor(); // сбрасываем в стандартный
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red; // устанавливаем цвет
                 Console.WriteLine("Not simple :( ");
+                Console.ResetColor(); // сбрасываем в стандартный
             }    
-            Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
-            Console.ResetColor(); // сбрасываем в стандартный
             Console.ReadKey();
         }
     }
