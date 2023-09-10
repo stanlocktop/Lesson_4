@@ -1,4 +1,5 @@
-﻿namespace Task3
+﻿using Random = System.Random;
+namespace Task3
 {
     //    3) Доробити програму, яку розглядали на занятті (через використання методу і в ньому return)
     //Перевірка чи є введене натуральне число простим
@@ -8,23 +9,26 @@
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            / Random random = new Random();
-            int gennum = random.next(2, 1000);
-
+            Random random = new Random();
+            int gennum = random.Next(2, 1000);
+            bool simple = true;
             int indicator = 1;
             for (int i = 2; i < gennum; i++)
             {
                 if (gennum % i == 0)
                 {
-                    console.writeline("not simple");
-                    indicator = 0;
+                    simple = false;
                     break;
                 }
             }
-            if (indicator == 1)
+            if (simple)
             {
-                console.writeline("simple");
+                Console.WriteLine("Simple :) ");
             }
+            else
+            {
+                Console.WriteLine("Not simple :( ");
+            }    
             Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
             Console.ResetColor(); // сбрасываем в стандартный
             Console.ReadKey();
