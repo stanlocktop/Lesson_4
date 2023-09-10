@@ -34,7 +34,7 @@
                     Console.ResetColor(); // сбрасываем в стандартный
                 }
 
-            } 
+            }
             while (guess != secretNumber);
             Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
             Console.WriteLine("Гра завершена. Дякуємо за гру!");
